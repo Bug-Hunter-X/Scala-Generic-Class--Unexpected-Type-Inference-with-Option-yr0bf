@@ -1,0 +1,28 @@
+```scala
+class MyClass[T](val value: T) {
+  def printValue(): Unit = {
+    value match {
+      case Some(x) => println(x) //Handle the Some case explicitly
+      case None => println("None") //Handle the None case
+      case _ => println(value) //Handle other cases
+    }
+  }
+}
+
+object MainObject extends App {
+  val myInt = new MyClass(10)
+  myInt.printValue() // Output: 10
+
+  val myString = new MyClass("hello")
+  myString.printValue() // Output: hello
+
+  val myList = new MyClass(List(1, 2, 3))
+  myList.printValue() // Output: List(1, 2, 3)
+
+  val myOption = new MyClass(Some(10))
+  myOption.printValue() // Output: 10
+
+  val myNone = new MyClass(None)
+  myNone.printValue() //Output: None
+}
+```
